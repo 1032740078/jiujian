@@ -16,61 +16,61 @@ module.exports = appInfo => {
     config.keys = appInfo.name + '_1563332133292_5420';
 
     /** sequelize mysql*/
-    config.sequelize = {
-        /** *************** 服务器 *****************/
-        dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
-        database: 'jiujian',
-        host: '192.168.1.12',
-        // host: 'localhost',
-        port: 3306,
-        username: 'jiujian',
-        password: 'S23Y328cSz3btEeX',
-
-
-        define: { // model的全局配置
-            timestamps: true, // 添加create,update,delete时间戳
-            paranoid: true, // 添加软删除
-            freezeTableName: true, // 防止修改表名为复数
-            underscored: false, // 防止驼峰式字段被默认转为下划线
-        },
-        timezone: '+8:00', // 由于orm用的UTC时间，这里必须加上东八区，否则取出来的时间相差8小时
-        // 连接数 = ((核心数 * 2) + 有效磁盘数)
-        pool: {// 连接池
-            // max: 6,
-            min: 3,
-            acquire: 30000,
-            idle: 100000,
-        },
-        // dialectOptions: { // 让读取date类型数据时返回字符串而不是UTC时间
-        //   dateStrings: true,
-        //   typeCast(field, next) {
-        //     if (field.type === 'DATETIME') {
-        //       return field.string();
-        //     }
-        //     return next();
-        //   },
-        // },
-
-    };
+    // config.sequelize = {
+    //     /** *************** 服务器 *****************/
+    //     dialect: 'mysql', // support: mysql, mariadb, postgres, mssql
+    //     database: 'jiujian',
+    //     host: '192.168.1.12',
+    //     // host: 'localhost',
+    //     port: 3306,
+    //     username: 'jiujian',
+    //     password: 'S23Y328cSz3btEeX',
+    //
+    //
+    //     define: { // model的全局配置
+    //         timestamps: true, // 添加create,update,delete时间戳
+    //         paranoid: true, // 添加软删除
+    //         freezeTableName: true, // 防止修改表名为复数
+    //         underscored: false, // 防止驼峰式字段被默认转为下划线
+    //     },
+    //     timezone: '+8:00', // 由于orm用的UTC时间，这里必须加上东八区，否则取出来的时间相差8小时
+    //     // 连接数 = ((核心数 * 2) + 有效磁盘数)
+    //     pool: {// 连接池
+    //         // max: 6,
+    //         min: 3,
+    //         acquire: 30000,
+    //         idle: 100000,
+    //     },
+    //     // dialectOptions: { // 让读取date类型数据时返回字符串而不是UTC时间
+    //     //   dateStrings: true,
+    //     //   typeCast(field, next) {
+    //     //     if (field.type === 'DATETIME') {
+    //     //       return field.string();
+    //     //     }
+    //     //     return next();
+    //     //   },
+    //     // },
+    //
+    // };
 
 
     /** redis */
-    config.redis = {
-        clients: {
-            jiujian: {                 // instanceName. See below
-                port: 6379,          // Redis port
-                host: '192.168.1.12',   // Redis host
-                password: '123456',
-                db: 0,
-            },
-            // bar: {
-            //     port: 6379,
-            //     host: '127.0.0.1',
-            //     password: 'auth',
-            //     db: 1,
-            // },
-        }
-    };
+    // config.redis = {
+    //     clients: {
+    //         jiujian: {                 // instanceName. See below
+    //             port: 6379,          // Redis port
+    //             host: '192.168.1.12',   // Redis host
+    //             password: '123456',
+    //             db: 0,
+    //         },
+    //         // bar: {
+    //         //     port: 6379,
+    //         //     host: '127.0.0.1',
+    //         //     password: 'auth',
+    //         //     db: 1,
+    //         // },
+    //     }
+    // };
 
     /** csrf */
     config.security = {
